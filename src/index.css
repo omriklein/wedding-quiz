@@ -1,0 +1,63 @@
+:root {
+  --bg: #0D1526;
+  --surface: #182040;
+  --surface-2: #1E2A52;
+  --pink: #E8409E;
+  --pink-dark: #C0307E;
+  --pink-glow: rgba(232, 64, 158, 0.28);
+  --cyan: #48C8F0;
+  --text: #FFFFFF;
+  --text-dim: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.42);
+  --correct: #4CD97A;
+  --correct-bg: rgba(76, 217, 122, 0.16);
+  --correct-border: rgba(76, 217, 122, 0.8);
+  --wrong: #FF6B6B;
+  --wrong-bg: rgba(255, 107, 107, 0.14);
+  --wrong-border: rgba(255, 107, 107, 0.8);
+  --font: 'Rubik', sans-serif;
+  --radius: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font);
+  border: none;
+  background: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
