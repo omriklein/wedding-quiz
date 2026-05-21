@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import styles from './ResultsScreen.module.css'
 
 function getMessage(pct) {
@@ -15,6 +15,14 @@ let nextId = 0
 export default function ResultsScreen({ score, total, onRestart }) {
   const pct = Math.round((score / total) * 100)
   const { text, emoji } = getMessage(pct)
+
+  useEffect(() => {
+    if (pct !== 100) return
+    const audio = new Audio(`${import.meta.env.BASE_URL}sounds/cheer.wav`)
+    audio.volume = 0.7
+    audio.play().catch(() => {})
+  }, [])
+
   const [sparks, setSparks] = useState([])
   const wrapRef = useRef(null)
 
